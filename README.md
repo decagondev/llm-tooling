@@ -123,7 +123,7 @@ Contributions are welcome! Please fork the repository and create a pull request 
 License
 -------
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
 
 Acknowledgments
 ---------------
@@ -173,7 +173,7 @@ Code Files
     openai:
       api_key: "your_openai_api_key"
 
-### tools/tool\_loader.py
+### tools/tool_loader.py
 
     import importlib
     
@@ -192,7 +192,7 @@ Code Files
             else:
                 raise ValueError(f"Tool {tool_name} not loaded.")
 
-### tools/openai\_tool.py
+### tools/openai_tool.py
 
     import openai
     import yaml
@@ -228,7 +228,7 @@ Code Files
         def log(self, message):
             self.logger.info(message)
 
-### tests/test\_tool\_loader.py
+### tests/test_tool_loader.py
 
     import unittest
     from llm_tooling.tools.tool_loader import ToolLoader
@@ -249,7 +249,7 @@ Code Files
     if __name__ == '__main__':
         unittest.main()
 
-### tests/test\_openai\_tool.py
+### tests/test_openai_tool.py
 
     import unittest
     from llm_tooling.tools.openai_tool import OpenaiTool
