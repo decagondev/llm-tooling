@@ -1,8 +1,9 @@
 import openai
 import yaml
 from llm_tool_project.utils.logger import Logger
+from llm_tool_project.tools.base_tool import BaseTool
 
-class OpenaiTool:
+class OpenaiTool(BaseTool):
     def __init__(self):
         self.logger = Logger()
         with open('llm_tooling/config/config.yaml', 'r') as file:
