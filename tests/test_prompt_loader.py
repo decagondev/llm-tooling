@@ -1,6 +1,6 @@
 import unittest
 import os
-from llm_tool_project.prompts.prompt_loader import PromptLoader
+from llm_tooling.prompts.prompt_loader import PromptLoader
 
 class TestPromptLoader(unittest.TestCase):
     def setUp(self):

@@ -1,5 +1,5 @@
 import unittest
-from llm_tool_project.tools.tool_loader import ToolLoader
+from llm_tooling.tools.tool_loader import ToolLoader
 
 class TestToolLoader(unittest.TestCase):
     def setUp(self):

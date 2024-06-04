@@ -1,5 +1,5 @@
-from llm_tool_project.tools.tool_loader import ToolLoader
-from llm_tool_project.prompts.prompt_loader import PromptLoader
+from tools.tool_loader import ToolLoader
+from prompts.prompt_loader import PromptLoader
 
 def main():
     tool_loader = ToolLoader()

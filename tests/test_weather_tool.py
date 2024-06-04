@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, Mock
-from llm_tool_project.tools.weather_tool import WeatherTool
+from llm_tooling.tools.weather_tool import WeatherTool
 
 class TestWeatherTool(unittest.TestCase):
     def setUp(self):

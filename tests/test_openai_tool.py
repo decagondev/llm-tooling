@@ -1,5 +1,5 @@
 import unittest
-from llm_tool_project.tools.openai_tool import OpenaiTool
+from llm_tooling.tools.openai_tool import OpenaiTool
 
 class TestOpenaiTool(unittest.TestCase):
     def setUp(self):

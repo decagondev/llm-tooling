@@ -1,7 +1,7 @@
 import os
 
 class PromptLoader:
-    def __init__(self, prompt_dir='llm_tooling/prompts'):
+    def __init__(self, prompt_dir='prompts'):
         self.prompt_dir = prompt_dir
 
     def list_prompts(self):
