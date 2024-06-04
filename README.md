@@ -11,11 +11,11 @@ The LLM Tool Project is designed to facilitate the loading and usage of various 
 Project Structure
 -----------------
 ```
-llm_tool_project/
+llm_tooling/
 ├── README.md
 ├── setup.py
 ├── requirements.txt
-├── llm_tool_project/
+├── llm_tooling/
 │   ├── __init__.py
 │   ├── main.py
 │   ├── config/
@@ -38,7 +38,7 @@ llm_tool_project/
 *   `README.md`: This file. Provides an overview and setup instructions for the project.
 *   `setup.py`: Script for setting up the Python package.
 *   `requirements.txt`: Lists the dependencies required for the project.
-*   `llm_tool_project/`: Main project directory containing the codebase.
+*   `llm_tooling/`: Main project directory containing the codebase.
     *   `__init__.py`: Initializes the Python package.
     *   `main.py`: The main script to run the project.
     *   `config/`: Directory for configuration files.
@@ -63,8 +63,8 @@ Ensure you have Python 3.6 or higher installed. You can download Python from [py
 
 1.  Clone the repository:
     
-        git clone https://github.com/yourusername/llm_tool_project.git
-        cd llm_tool_project
+        git clone https://github.com/yourusername/llm_tooling.git
+        cd llm_tooling
     
 2.  Create and activate a virtual environment (optional but recommended):
     
@@ -75,7 +75,7 @@ Ensure you have Python 3.6 or higher installed. You can download Python from [py
     
         pip install -r requirements.txt
     
-4.  Configure the project by updating `llm_tool_project/config/config.yaml` with your OpenAI API key:
+4.  Configure the project by updating `llm_tooling/config/config.yaml` with your OpenAI API key:
     
         openai:
           api_key: "your_openai_api_key"
@@ -85,7 +85,7 @@ Ensure you have Python 3.6 or higher installed. You can download Python from [py
 
 To run the project, execute the `main.py` script:
 
-    python llm_tool_project/main.py
+    python llm_tooling/main.py
 
 ### Running Tests
 
@@ -100,7 +100,7 @@ Usage
 
 The `ToolLoader` class is responsible for loading and calling tools. Here is an example of how to use it:
 
-    from llm_tool_project.tools.tool_loader import ToolLoader
+    from llm_tooling.tools.tool_loader import ToolLoader
     
     tool_loader = ToolLoader()
     tool_loader.load_tool('openai')
@@ -111,7 +111,7 @@ The `ToolLoader` class is responsible for loading and calling tools. Here is an 
 
 To add a new tool, follow these steps:
 
-1.  Create a new module in the `llm_tool_project/tools/` directory, e.g., `new_tool.py`.
+1.  Create a new module in the `llm_tooling/tools/` directory, e.g., `new_tool.py`.
 2.  Define a class for the tool, e.g., `NewTool`, and implement the necessary methods.
 3.  Update the `ToolLoader` class to support the new tool.
 
@@ -139,7 +139,7 @@ Code Files
     from setuptools import setup, find_packages
     
     setup(
-        name='llm_tool_project',
+        name='llm_tooling',
         version='0.1.0',
         packages=find_packages(),
         install_requires=[
@@ -157,7 +157,7 @@ Code Files
 
 ### main.py
 
-    from llm_tool_project.tools.tool_loader import ToolLoader
+    from llm_tooling.tools.tool_loader import ToolLoader
     
     def main():
         tool_loader = ToolLoader()
@@ -182,7 +182,7 @@ Code Files
             self.tools = {}
     
         def load_tool(self, tool_name):
-            module = importlib.import_module(f'llm_tool_project.tools.{tool_name}_tool')
+            module = importlib.import_module(f'llm_tooling.tools.{tool_name}_tool')
             tool_class = getattr(module, f'{tool_name.capitalize()}Tool')
             self.tools[tool_name] = tool_class()
     
@@ -196,12 +196,12 @@ Code Files
 
     import openai
     import yaml
-    from llm_tool_project.utils.logger import Logger
+    from llm_tooling.utils.logger import Logger
     
     class OpenaiTool:
         def __init__(self):
             self.logger = Logger()
-            with open('llm_tool_project/config/config.yaml', 'r') as file:
+            with open('llm_tooling/config/config.yaml', 'r') as file:
                 config = yaml.safe_load(file)
                 self.api_key = config['openai']['api_key']
             openai.api_key = self.api_key
@@ -231,7 +231,7 @@ Code Files
 ### tests/test\_tool\_loader.py
 
     import unittest
-    from llm_tool_project.tools.tool_loader import ToolLoader
+    from llm_tooling.tools.tool_loader import ToolLoader
     
     class TestToolLoader(unittest.TestCase):
         def setUp(self):
@@ -252,7 +252,7 @@ Code Files
 ### tests/test\_openai\_tool.py
 
     import unittest
-    from llm_tool_project.tools.openai_tool import OpenaiTool
+    from llm_tooling.tools.openai_tool import OpenaiTool
     
     class TestOpenaiTool(unittest.TestCase):
         def setUp(self):

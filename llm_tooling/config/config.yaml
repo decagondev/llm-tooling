@@ -1,2 +1,4 @@
 openai:
   api_key: "your_openai_api_key"
+weather:
+  api_key: "your_openweather_api_key"
